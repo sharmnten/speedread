@@ -19,6 +19,17 @@
         </nav>
         <main>
             <h1>Teleprompter</h1>
+            <textarea placeholder="Enter your text here"></textarea>
+            <div>
+                <label for="speed">Speed (words per minute):</label>
+                <input type="number" id="speed" value="200">
+            </div>
+            <button id="startBtn">Start Teleprompter</button>
+            
+            <div id="teleprompterDisplay" class="teleprompter-display">
+                <!-- Teleprompter text will be displayed here -->
+                 <h1 id="teleprompter">[YOUR TEXT HERE]</h1>
+            </div>
         </main>
         <footer>
             <p>Made with ❤️ by @sharmnten</p>
