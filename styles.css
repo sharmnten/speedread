@@ -113,14 +113,21 @@ footer {
     font-size: 0.9em;
     width: 100%;
 }
+nav a[aria-current="page"] {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--primary-color);
+}
+
 textarea {
     border: 1px solid var(--tertiary-color);
     border-radius: 4px;
     padding: 10px;
     font-size: 1em;
+    font-family: "Inter", sans-serif;
     width: 100%;
     margin-bottom: 1em;
     transition: border-color 0.2s ease;
+    resize: vertical;
 }
 
 
@@ -142,4 +149,180 @@ button {
 
 button:hover {
     background-color: var(--secondary-color);
+}
+
+/* ── Teleprompter controls ── */
+.tp-controls-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 1em;
+    flex-wrap: wrap;
+}
+
+.tp-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tp-control-group label {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.tp-control-group input[type="number"] {
+    border: 1px solid var(--tertiary-color);
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 1em;
+    width: 130px;
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
+    transition: border-color 0.2s ease;
+}
+
+.tp-control-group input[type="number"]:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+/* ── Teleprompter display ── */
+.teleprompter-display {
+    display: flex;
+    flex-direction: column;
+    background: var(--quaternary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 65vh;
+    min-height: 400px;
+    margin-top: 0.5em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tp-scroller {
+    flex: 1;
+    overflow: hidden;
+    padding: 40px 10%;
+}
+
+.tp-text {
+    color: var(--primary-color);
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.tp-end-pad {
+    height: 60vh;
+}
+
+/* ── Teleprompter control bar ── */
+.tp-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.25);
+    border-top: 1px solid var(--secondary-color);
+    flex-shrink: 0;
+}
+
+.tp-btn {
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.tp-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.tp-btn-stop {
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.tp-btn-stop:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.tp-speed-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    font-size: 0.9em;
+}
+
+.tp-speed-control label {
+    color: var(--secondary-color);
+    white-space: nowrap;
+}
+
+.tp-speed-control input[type="range"] {
+    width: 120px;
+    accent-color: var(--tertiary-color);
+}
+
+#liveSpeedVal {
+    min-width: 70px;
+    color: var(--primary-color);
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* ── SpeedRead display ── */
+.speedread-display {
+    margin-top: 2em;
+    text-align: center;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.speedread-display h1 {
+    font-size: 3em;
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.sr-progress {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    margin-top: 0.5em;
+    min-height: 1.4em;
+}
+
+.sr-btn-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.sr-btn-row .tp-btn-stop {
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sr-btn-row .tp-btn-stop:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }

@@ -3,32 +3,37 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SpeedRead</title>
+        <title>SpeedRead - Accelerate Your Reading</title>
         <link rel="stylesheet" href="../styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+NZ+Basic:wght@100..400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <nav>
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/speedread/index.html">SpeedRead</a></li>
-                <li><a href="/teleprompter/index.html">Teleprompter</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html" aria-current="page">SpeedRead</a></li>
+                <li><a href="../teleprompter/index.html">Teleprompter</a></li>
             </ul>
         </nav>
         <main>
             <h1>Speed Read</h1>
-            <textarea id="inputText" placeholder="Enter your text here"></textarea>
-            <div>
-                <label for="speed">Speed (words per minute):</label>
-                <input type="number" id="speed" value="200">
-                <p>Max recommended speed is 1000 wpm</p>
+            <textarea id="inputText" rows="10" placeholder="Paste your text here..."></textarea>
+            <div class="tp-controls-row">
+                <div class="tp-control-group">
+                    <label for="speed">Speed (WPM)</label>
+                    <input type="number" id="speed" value="200" min="1" max="1000">
+                </div>
             </div>
-            <button id="startBtn">Start reading!</button>
-            
+            <div class="sr-btn-row">
+                <button id="startBtn">Start reading!</button>
+                <button id="stopBtn" class="tp-btn-stop" style="display: none;">Stop</button>
+            </div>
+
             <div id="speedreadDisplay" class="speedread-display">
-            <h1 id="speedReadDisplay"></h1>
+                <h1 id="speedReadDisplay"></h1>
+                <p id="speedReadProgress" class="sr-progress"></p>
             </div>
         </main>
         <footer>
