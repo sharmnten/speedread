@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "SpeedRead",
+  "version": "1.0",
+  "description": "Speed reading tool",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_title": "Start SpeedRead"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
