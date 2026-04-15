@@ -2,11 +2,9 @@
   "manifest_version": 3,
   "name": "SpeedRead",
   "version": "1.0",
-  "description": "Speed reading tool",
   "permissions": ["activeTab", "scripting"],
-  "action": {
-    "default_title": "Start SpeedRead"
-  },
+  "host_permissions": ["<all_urls>"], 
+  "action": {},
   "background": {
     "service_worker": "background.js"
   }

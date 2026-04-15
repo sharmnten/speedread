@@ -67,36 +67,41 @@ li strong {
 
 nav {
     background-color: var(--tertiary-color);
-    padding: 14px 24px;
+    padding: 0 24px;
     display: flex;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    height: 64px;
 }
 
 nav ul {
     display: flex;
     gap: 24px;
-    padding: 10px 0;
-    margin: -10px 0;
-    transition: background-color 0.2s ease;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    align-items: center;
 }
 
 
 
 nav li {
     list-style: none;
+    display: flex;
+    height: 100%;
 }
 
 nav a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    padding: 20px 18px;
+    font-size: 1.2em; /* Made options slightly larger */
+    padding: 0 18px;
     border-radius: 0;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
-    margin: -14px 0;
+    height: 100%;
 }
 
 nav a:hover {
